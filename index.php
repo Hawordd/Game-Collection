@@ -1,14 +1,4 @@
 <?php
-    // à corriger
-    require_once 'Models/gameModel.php';
-    $gameModel = new GameModel();
-    require_once 'Models/userModel.php';
-    $userModel = new UserModel();
-
-    require_once 'Controllers/GameController.php';
-    $gameController = new GameController($gameModel);
-
-
     $request = $_SERVER['REQUEST_URI'];
 
     $request = strtok($request, '?');
