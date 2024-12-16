@@ -310,6 +310,7 @@ tr:nth-child(even) {
     gap: 10px;
 }
 #content-row img{
-    width: 300px;
+    width: 350px;
+    max-height: 600px;
     object-fit: cover;
 }
