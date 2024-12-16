@@ -1,0 +1,315 @@
+html,body{
+    background-color: #211f2a;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+h1,h2,h3,p,a,label,th,td{
+    color: white;
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    height: fit-content;
+}
+/* header */
+header{
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    background-color: #211f2a;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 25px;
+}
+header img{
+    width: 75px;
+    height: auto;
+}
+header ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+header li{
+    text-transform: uppercase;
+}
+header a:hover{
+    text-decoration: underline;
+}
+
+
+/* footer */
+footer{
+    width: 100%;
+    background-color: #211f2a;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* main */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+#content{
+    margin: 10px 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#content h1{
+    font-weight: 700;
+    font-size: 28px;
+}
+#content-row {
+    margin: 10px 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* textfield */
+input[type="text"],input[type="email"],input[type="password"],input[type="date"],input[type="url"] {
+    width: 300px;
+    padding: 10px;
+    color:white;
+    border: none;
+    background-color: #2B2F40;
+    border-radius: 5px;
+}
+input[type="checkbox"]{
+    align-self: flex-start;
+}
+
+/* button */
+button {
+    padding: 10px;
+    border: none;
+    background-color: #6657D6;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    width: fit-content;
+}
+
+/* banner */
+#banner{
+    width: 100%;
+    height: 250px;
+}
+
+#banner img{
+    width: 100%;
+    height: 100%;
+    filter: saturate(0.8) contrast(1.2) brightness(0.5);
+    object-fit: cover;
+}
+#banner div{
+    position: relative;
+    top: -75%;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#banner h2{
+    padding-left: 50px;
+    margin-block: 0;
+    margin-inline: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 35px;
+}
+/* form */
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.label{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0;
+}
+.checkbox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+form h3{
+    margin-inline: 0;
+    margin-block: 0;
+}
+
+/* mes jeux */
+#my-games{
+    align-self: center;
+    width: 920px;
+}
+#my-games h1{
+    font-weight: 700;
+    font-size: 25px;
+}
+#games-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.game{
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+}
+.game img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.game div{
+    position: relative;
+    top: calc(-100% - 3.5px);
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 35%, rgba(200, 200, 200, 0.3) 50%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0) 100%);
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 0 15px 30px 15px;
+    gap: 15px;
+}
+.game div div{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    align-items: start;
+    justify-content: space-between;
+    height: fit-content;
+    position: static;
+    top: auto;
+    background: none;
+    flex-direction: row;
+}
+.game h3{
+    align-self: center;
+    font-weight: 50;
+    font-size: 25px;
+}
+.game h2{
+    font-weight: 700;
+    font-size: 30px;
+}
+.game p{
+    font-weight: 50;
+    font-size: 13px;
+}
+.game h2, .game h3, .game p{
+    margin-inline: 0;
+    margin-block: 0;
+}
+
+/* login / logout */
+#log-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    margin: 20px 0;
+}
+
+#log-page h1 {
+    text-align: left;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#log-form {
+    background-color: #262836;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    width:35%;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+}
+#log-form input{
+    width: calc(100% - 20px);
+}
+/* librairy */
+#search-game{
+    align-self: center;
+    width: 920px;
+}
+#search-game h1{
+    font-weight: 700;
+    font-size: 28px;
+}
+
+/* scoreboard */
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+td, th{
+    padding: 10px 0;
+}
+th{
+    text-align: start;
+    font-weight: 700;
+    font-size: 16px;
+}
+th:first-child, th:last-child{
+    width: 40%;
+}
+td{
+    font-weight: 50;
+}
+tr:nth-child(even) {
+    background-color: #252836;
+}
+/* add */
+#descr{
+    width: 100%;
+}
+
+/* game info */
+#game-info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#content-row img{
+    width: 300px;
+    object-fit: cover;
+}
