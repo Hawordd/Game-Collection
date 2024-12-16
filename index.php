@@ -1,19 +1,39 @@
 <?php
     $db = new PDO('mysql:host=localhost;dbname=................;charset=utf8', 'root', '');
 
+
+    // tout à changer
     require_once 'Models/Game.php';
     $gameModel = new Game($db);
     require_once 'Models/User.php';
     $userModel = new User($db);
 
     require_once 'Controllers/GameController.php';
-    $articleController = new ArticleController($articleModel);
+    $gameController = new GameController($gameModel);
 
-    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-    if ($page == 'home') {
-        $articleController->showArticles($word);
-    } else if (preg_match('(\d+)', $page, $matches)) {
-        $articleController->showArticle($page);
+    $request = $_SERVER['REQUEST_URI'];
+
+    $request = strtok($request, '?');
+
+    $routes = [
+        '/' => 'Views/home.php',
+        '/index' => 'Views/home.php',
+        '/home' => 'Views/home.php',
+        '/librairy' => 'Views/librairy.php',
+        '/profil' => 'Views/profil.php',
+        '/scoreboard' => 'Views/scoreboard.php',
+        '/edit' => 'Views/edit.php',
+        '/add' => 'Views/add.php',
+        '/login' => 'Views/login.php',
+        '/register' => 'Views/register.php',
+        '/404' => 'Views/404.html'
+    ];
+
+    if (array_key_exists($request, $routes)) {
+        include $routes[$request];
+    } else {
+        http_response_code(404);
+        header('Location: /404');
     }
 ?>
