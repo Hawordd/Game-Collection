@@ -9,7 +9,7 @@ class UserModel {
     private PDO $db;
 
     public function __construct() {
-        $this->db = Database::getConnection();
+        $this->db = Database::getConnection(); 
     }
 
     public function getUser($id) {
