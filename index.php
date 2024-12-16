@@ -1,10 +1,7 @@
 <?php
-    $db = new PDO('mysql:host=localhost;dbname=................;charset=utf8', 'root', '');
-
-
-    // tout à changer
+    // à corriger
     require_once 'Models/gameModel.php';
-    $gameModel = new GameModel($db);
+    $gameModel = new GameModel();
     require_once 'Models/userModel.php';
     $userModel = new UserModel();
 
