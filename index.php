@@ -4,7 +4,7 @@
     $request = strtok($request, '?');
 
     $routes = [
-        '/' => 'Views/home.php',
+        '/' => './Views/home.php',
         '/index' => 'Views/home.php',
         '/home' => 'Views/home.php',
         '/librairy' => 'Views/librairy.php',
@@ -12,7 +12,7 @@
         '/scoreboard' => 'Views/scoreboard.php',
         '/edit' => 'Views/edit.php',
         '/add' => 'Views/add.php',
-        '/login' => 'Views/login.php',
+        '/login' => './Views/login.php',
         '/register' => 'Views/register.php',
         '/404' => 'Views/404.html'
     ];
