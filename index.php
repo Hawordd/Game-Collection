@@ -3,10 +3,10 @@
 
 
     // tout à changer
-    require_once 'Models/Game.php';
-    $gameModel = new Game($db);
-    require_once 'Models/User.php';
-    $userModel = new User($db);
+    require_once 'Models/gameModel.php';
+    $gameModel = new GameModel($db);
+    require_once 'Models/userModel.php';
+    $userModel = new UserModel();
 
     require_once 'Controllers/GameController.php';
     $gameController = new GameController($gameModel);
