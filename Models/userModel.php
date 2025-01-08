@@ -6,8 +6,8 @@ use DBConfig\Database;
 use PDO;
 use PDOException;
 
-require_once 'Config/DBConfig/Database.php';
-require_once 'Config/DBConfig/Config.php';
+require_once 'Config/DBConfig/database.php';
+require_once 'Config/DBConfig/config.php';
 
 class UserModel {
     private PDO $db;
