@@ -9,13 +9,14 @@
         '/' => 'Views/home.php',
         '/index' => 'Views/home.php',
         '/home' => 'Views/home.php',
-        '/librairy' => 'Views/librairy.php',
+        '/librairy' => 'Views/library.php',
         '/profil' => 'Views/profil.php',
         '/scoreboard' => 'Views/scoreboard.php',
         '/edit' => 'Views/edit.php',
         '/add' => 'Views/add.php',
         '/login' => 'Views/login.php',
         '/register' => 'Views/register.php',
+        '/disconnect' => 'Views/disconnect.php',
         '/404' => 'Views/404.html'
     ];
 
