@@ -3,13 +3,4 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^$ Views/home.php [L]
-RewriteRule ^library$ Views/library.php [L]
-RewriteRule ^profil$ Views/profil.php [L]
-RewriteRule ^scoreboard$ Views/scoreboard.php [L]
-RewriteRule ^edit$ Views/edit.php [L]
-RewriteRule ^add$ Views/add.php [L]
-RewriteRule ^login$ Views/login.php [L]
-RewriteRule ^register$ Views/register.php [L]
-
-ErrorDocument 404 /Views/404.html
+RewriteRule ^(.*)$ index.php [QSA,L]
