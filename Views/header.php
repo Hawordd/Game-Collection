@@ -1,5 +1,5 @@
     <header>
-        <a href=""><img src="../Assets/Images/logo.png" alt="Logo"></a>
+        <a href="/"><img src="../Assets/Images/logo.png" alt="Logo"></a>
         <ul>
             <li><a href="library">Ma bibliothèque</a></li>
             <li><a href="add">Ajouter un jeu</a></li>
