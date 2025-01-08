@@ -13,6 +13,7 @@ $controller->registerRequest();
     <title>Game Collection - Register</title>
 </head>
 <body>
+<?php include 'header.php'; ?>
 <main>
     <div id="log-page">
         <div id="log-form">

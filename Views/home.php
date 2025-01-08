@@ -7,20 +7,16 @@
     <title>Game Collection</title>
 </head>
 <body>
-    <header>
-        <a href=""><img src="../Assets/Images/logo.png" alt="Logo"></a>
-        <ul>
-            <li><a href="">Ma bibliothèque</a></li>
-            <li><a href="">Ajouter un jeu</a></li>
-            <li><a href="">Classement</a></li>
-            <li><a href="">Profil</a></li>
-        </ul>
-    </header>
+    <?php include 'header.php'; ?>
     <main>
         <div id="banner">
             <img src="../Assets/Images/banner.jpg" alt="banner">
             <div>
-                <h2>Salut {PRENOM} !</h2>
+                <?php if (isset($_SESSION['prenom'])): ?>
+                    <h2>Salut <?php echo $_SESSION['prenom']; ?> !</h2>
+                <?php else: ?>
+                    <h2>Salut !</h2>
+                <?php endif; ?>
                 <h2>Prêt à ajouter des</h2>
                 <h2>jeux à ta collection ?</h2>
             </div>
