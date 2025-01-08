@@ -22,7 +22,7 @@ class loginController
 
                 if ($this->model->emailExists($email) && $this->model->passwordIsValid($email, $password)) {
                     $user = $this->model->getUserByEmail($email);
-                    $_SESSION['email'] = $email;
+                    $_SESSION['id'] = $user['id_utili'];
                     $_SESSION['prenom'] = $user['pren_utili'];
                     $_SESSION['userId'] = $user['id_utili'];
 
