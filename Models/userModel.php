@@ -4,6 +4,10 @@ namespace Models;
 
 use DBConfig\Database;
 use PDO;
+use PDOException;
+
+require_once 'Config/DBConfig/Database.php';
+require_once 'Config/DBConfig/Config.php';
 
 class UserModel {
     private PDO $db;
@@ -24,9 +28,18 @@ class UserModel {
         return $req->fetch();
     }
 
-    public function addUser($email, $motdepasse): void {
-        $req = $this->db->prepare('INSERT INTO UTILISATEUR (email_utili, mdp_utili) VALUES (:email, :motdepasse)');
-        $req->execute(array('email' => $email, 'motdepasse' => password_hash($motdepasse, PASSWORD_DEFAULT)));
+    public function addUser($nom, $prenom, $email, $motdepasse): void {
+        try {
+            $req = $this->db->prepare('INSERT INTO UTILISATEUR (nom_utili, pren_utili, email_utili, mdp_utili) VALUES (:nom, :prenom, :email, :motdepasse)');
+            $req->execute(array(
+                'nom' => $nom,
+                'prenom' => $prenom,
+                'email' => $email,
+                'motdepasse' => password_hash($motdepasse, PASSWORD_DEFAULT)
+            ));
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+        }
     }
 
     public function emailExists($email): bool {
