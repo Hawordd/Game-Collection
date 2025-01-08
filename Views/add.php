@@ -1,3 +1,9 @@
+<?php
+require 'Controllers/addGameController.php';
+$controller = new addGameController();
+$controller->addGameRequest();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,7 +18,8 @@
         <div id="content">
             <h1>Ajouter un jeu a sa bibliothèque</h1>
             <p>Le jeu que vous souhaiter ajouter n'existe pas ! Vous pouvez le créer, celui-ci sera automatiquement ajouter a votre bibliothèque !</p>
-            <form>
+            <form method="post" action="add" id="addGame">
+                <input type="hidden" name="addGame" value="1">
                 <div class="label">
                     <label for="name">Nom du jeu :</label>
                     <input type="text" name="name" id="name" placeholder="Non du jeu" required>
@@ -27,20 +34,24 @@
                 </div>
                 <h3>Platformes</h3>
                 <div class="checkbox">
-                    <input type="checkbox" name="release" id="release" required>
-                    <label for="">PC</label>
+                    <input type="checkbox" name="platforms[]" value="1" id="1">
+                    <label for="1">PC</label>
                 </div>
                 <div class="checkbox">
-                    <input type="checkbox" name="release" id="release" required>
-                    <label for="">PS4</label>
+                    <input type="checkbox" name="platforms[]" value="4" id="4">
+                    <label for="4">PS4</label>
                 </div>
                 <div class="checkbox">
-                    <input type="checkbox" name="release" id="release" required>
-                    <label for="">Xbox</label>
+                    <input type="checkbox" name="platforms[]" value="3" id="3">
+                    <label for="3">Xbox</label>
                 </div>
                 <div class="checkbox">
-                    <input type="checkbox" name="release" id="release" required>
-                    <label for="">Nintendo Switch</label>
+                    <input type="checkbox" name="platforms[]" value="2" id="2">
+                    <label for="2">Nintendo Switch</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" name="platforms[]" value="5" id="5">
+                    <label for="5">Mobile</label>
                 </div>
                 <div class="label">
                     <label for="descr">Description du jeu :</label>
