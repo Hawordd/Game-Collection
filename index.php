@@ -9,7 +9,7 @@
         '/' => 'Views/home.php',
         '/index' => 'Views/home.php',
         '/home' => 'Views/home.php',
-        '/librairy' => 'Views/library.php',
+        '/library' => 'Views/library.php',
         '/profil' => 'Views/profil.php',
         '/scoreboard' => 'Views/scoreboard.php',
         '/edit' => 'Views/edit.php',
