@@ -2,7 +2,7 @@
 
 use Models\UserModel;
 
-require_once 'Models/UserModel.php';
+require_once './Models/UserModel.php';
 
 class registerController
 {
