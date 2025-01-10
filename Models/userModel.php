@@ -42,6 +42,21 @@ class UserModel {
         }
     }
 
+    public function updateUser($id, $nom, $prenom, $email, $motdepasse): void {
+        try {
+            $req = $this->db->prepare('UPDATE UTILISATEUR SET nom_utili = :nom, pren_utili = :prenom, email_utili = :email, mdp_utili = :motdepasse WHERE id_utilisateur = :id;');
+            $req->execute(array(
+                'id' => $id,
+                'nom' => $nom,
+                'prenom' => $prenom,
+                'email' => $email,
+                'motdepasse' => password_hash($motdepasse, PASSWORD_DEFAULT)
+            ));
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+        }
+    }
+
     public function emailExists($email): bool {
         $stmt = $this->db->prepare("SELECT COUNT(*) FROM UTILISATEUR WHERE email_utili = :email");
         $stmt->bindParam(':email', $email);
