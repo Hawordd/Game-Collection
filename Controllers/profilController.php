@@ -46,4 +46,14 @@ class ProfilController
         $nom = $this->model->getUser($_SESSION['id'])['nom_utili'];
         return htmlspecialchars($nom);
     }
+
+    public function getPrenom(){
+        $prenom = $this->model->getUser($_SESSION['id'])['pren_utili'];
+        return htmlspecialchars($prenom);
+    }
+
+    public function getEmail(){
+        $email = $this->model->getUser($_SESSION['id'])['email_utili'];
+        return htmlspecialchars($email);
+    }
 }

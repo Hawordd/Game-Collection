@@ -24,11 +24,11 @@ $controller->profilRequest();
                 </div>
                 <div class="label">
                     <label for="surname">Prénom :</label>
-                    <input type="text" name="surname" id="surname" required>
+                    <input type="text" name="surname" id="surname" value="<?php echo $controller->getPrenom() ?>" required>
                 </div>
                 <div class="label">
                     <label for="email">Email :</label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" value="<?php echo $controller->getEmail() ?>" required>
                 </div>
                 <div class="label">
                     <label for="password">Mot de passe :</label>
