@@ -24,7 +24,7 @@ class registerController
                 $password = $_POST['password'] ?? null;
                 $password_verify = $_POST['confirm_password'] ?? null;
 
-                if ($this->verifyDoublePasswordUser($password, $password_verify) === false) {
+                if ($this->model->verifyDoublePasswordUser($password, $password_verify) === false) {
                     $this->errorMessage = 'Les mots de passe ne correspondent pas';
                 } else {
                     if ($this->model->emailExists($email)) {
@@ -38,8 +38,5 @@ class registerController
         }
     }
 
-    public function verifyDoublePasswordUser($password, $password2): bool
-    {
-        return $password === $password2;
-    }
+    
 }

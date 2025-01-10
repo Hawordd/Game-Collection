@@ -29,7 +29,7 @@ class ProfilController
                     $password = $_POST['password'] ?? null;
                     $password_verify = $_POST['confirm_password'] ?? null;
     
-                    if ($this->verifyDoublePasswordUser($password, $password_verify) === false) {
+                    if ($this->model->verifyDoublePasswordUser($password, $password_verify) === false) {
                         $this->errorMessage = 'Les mots de passe ne correspondent pas';
                     } else {
                         if ($currentEmail != $email) {

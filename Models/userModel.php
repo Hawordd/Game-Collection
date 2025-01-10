@@ -71,4 +71,9 @@ class UserModel {
         $hashedPassword = $stmt->fetchColumn();
         return password_verify($password, $hashedPassword);
     }
+
+    public function verifyDoublePasswordUser($password, $password2): bool
+    {
+        return $password === $password2;
+    }
 }
