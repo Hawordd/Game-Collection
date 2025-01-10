@@ -1,7 +1,7 @@
 <?php
 require_once 'Controllers/profilController.php';
 $controller = new ProfilController();
-$controller->profilController();
+$controller->profilRequest();
 ?>
 
 <!DOCTYPE html>
