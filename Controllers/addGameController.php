@@ -18,6 +18,11 @@ class addGameController
     {
         if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['addGame'])) {
+                $exist = $this->model->getGameName($_POST['name']);
+                if ($exist) {
+                    $this->errorMessage = 'Ce jeu existe déjà.';
+                    return;
+                }
                 $nom = $_POST['name'] ?? null;
                 $editeur = $_POST['editor'] ?? null;
                 $date_sortie = $_POST['release'] ?? null;

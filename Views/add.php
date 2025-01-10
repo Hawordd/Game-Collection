@@ -17,6 +17,9 @@ $controller->addGameRequest();
     <main>
         <div id="content">
             <h1>Ajouter un jeu a sa bibliothèque</h1>
+            <?php if ($controller->errorMessage): ?>
+                <p><?php echo $controller->errorMessage; ?></p>
+            <?php endif; ?>
             <p>Le jeu que vous souhaiter ajouter n'existe pas ! Vous pouvez le créer, celui-ci sera automatiquement ajouter a votre bibliothèque !</p>
             <form method="post" action="add" id="addGame">
                 <input type="hidden" name="addGame" value="1">
@@ -48,10 +51,6 @@ $controller->addGameRequest();
                 <div class="checkbox">
                     <input type="checkbox" name="platforms[]" value="2" id="2">
                     <label for="2">Nintendo Switch</label>
-                </div>
-                <div class="checkbox">
-                    <input type="checkbox" name="platforms[]" value="5" id="5">
-                    <label for="5">Mobile</label>
                 </div>
                 <div class="label">
                     <label for="descr">Description du jeu :</label>

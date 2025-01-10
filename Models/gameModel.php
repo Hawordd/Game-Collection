@@ -28,25 +28,63 @@ class GameModel {
     }
 
     public function addGame($nom_jeux, $editeur_jeux, $date_sortie_jeux, $url_couverture_jeux, $url_jeux, $desc_jeux, $plateformes): void {
-        $req = $this->db->prepare('INSERT INTO JEUX (nom_jeux, editeur_jeux, date_sortie_jeux, url_couverture_jeux, url_jeux, desc_jeux, id_utili) VALUES (:nom_jeux, :editeur_jeux, :date_sortie_jeux, :url_couverture_jeux, :url_jeux, :desc_jeux, :id_utili)');
+        $req = $this->db->prepare('INSERT INTO JEUX (nom_jeux, editeur_jeux, date_sortie_jeux, url_couverture_jeux, url_jeux, desc_jeux) VALUES (:nom_jeux, :editeur_jeux, :date_sortie_jeux, :url_couverture_jeux, :url_jeux, :desc_jeux)');
         $req->execute(array(
             'nom_jeux' => $nom_jeux,
             'editeur_jeux' => $editeur_jeux,
             'date_sortie_jeux' => $date_sortie_jeux,
             'url_couverture_jeux' => $url_couverture_jeux,
             'url_jeux' => $url_jeux,
-            'desc_jeux' => $desc_jeux,
-            'id_utili' => $_SESSION['id']
+            'desc_jeux' => $desc_jeux
         ));
 
         $gameId = $this->db->lastInsertId();
         foreach ($plateformes as $plateforme) {
-            $req = $this->db->prepare('INSERT INTO JEUX_PLATEFORME (id_jeux, id_plat, id_utili) VALUES (:id_jeux, :plateforme, :id_utili)');
+            $req = $this->db->prepare('INSERT INTO JEUX_PLATEFORME (id_jeux, id_plat) VALUES (:id_jeux, :plateforme)');
             $req->execute(array(
                 'id_jeux' => $gameId,
-                'plateforme' => $plateforme,
-                'id_utili' => $_SESSION['id']
+                'plateforme' => $plateforme
             ));
         }
+
+        $req = $this->db->prepare('INSERT INTO TEMPS (id_jeux, id_utili, temps_jeux) VALUES (:id_jeux, :id_utili, :temps_jeu)');
+        $req->execute(array(
+            'id_jeux' => $gameId,
+            'id_utili' => $_SESSION['id'],
+            'temps_jeu' => -1
+        ));
+    }
+
+    public function getGamesByUser(int $userId): array {
+        $req = $this->db->prepare('SELECT id_jeux FROM TEMPS WHERE id_utili = :userId');
+        $req->execute(['userId' => $userId]);
+
+        $games = [];
+        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $game) {
+            $games[] = $game['id_jeux'];
+        }
+        return $games;
+    }
+
+    public function getPlaytime($game, $id)
+    {
+        $req = $this->db->prepare('SELECT temps_jeux FROM TEMPS WHERE id_jeux = :game AND id_utili = :id');
+        $req->execute(array(
+            'game' => $game,
+            'id' => $id
+        ));
+        return $req->fetch()['temps_jeux'];
+    }
+
+    public function getGamePlatforms($game): array
+    {
+        $req = $this->db->prepare('SELECT nom_plat FROM PLATEFORME JOIN JEUX_PLATEFORME ON PLATEFORME.id_plat = JEUX_PLATEFORME.id_plat WHERE id_jeux = :game');
+        $req->execute(array('game' => $game));
+
+        $platforms = [];
+        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $platform) {
+            $platforms[] = $platform['nom_plat'];
+        }
+        return $platforms;
     }
 }
