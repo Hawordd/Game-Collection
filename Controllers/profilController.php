@@ -8,6 +8,7 @@ class ProfilController
 {
     private UserModel $model;
     public string $errorMessage = '';
+    public string $validationMessage = '';
 
     public function __construct()
     {
