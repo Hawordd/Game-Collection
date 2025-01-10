@@ -50,14 +50,15 @@ $controller->profilRequest();
                 </div>
                 <input type="hidden" name="updateProfil">
                 <button type="submit">Modifier</button>
-                
             </form>
-            <?php if(isset($_POST['askForDeleteProfil'])): ?>
+            <?php if (isset($_POST['askForDeleteProfil'])): ?>
                 <p>Êtes-vous sûr de vouloir supprimer définitivement votre compte ?</p>
             <?php endif; ?>
-            <form action="" method="post">
-                <input type="hidden" name="<?php if($_POST['askForDeleteProfil'])? echo "deleteProfil" : "askForDeleteProfil" ?>">
-                <button type="submit"><?php if($_POST['askForDeleteProfil'])? echo "Confirmer" : "Suprimer mon compte" ?></button>
+            <form method="post">
+                <input type="hidden" name="<?php echo isset($_POST['askForDeleteProfil']) ? "deleteProfil" : "askForDeleteProfil"; ?>">
+                <button type="submit">
+                    <?php echo isset($_POST['askForDeleteProfil']) ? "Confirmer" : "Supprimer mon compte"; ?>
+                </button>
             </form>
             <form action="/disconnect" method="post">
                 <button type="submit">Se déconnecter</button>
