@@ -28,7 +28,7 @@ $controller->profilRequest();
                     <p><?php echo $controller->validationMessage; ?></p>
                 </div>
             <?php endif; ?>
-            <form>
+            <form method="post">
                 <div class="label">
                     <label for="name">Nom :</label>
                     <input type="text" name="name" id="name" value="<?php echo $controller->getNom() ?>" required>
@@ -53,7 +53,7 @@ $controller->profilRequest();
                 <button type="submit">Modifier</button>
                 
             </form>
-            <form action="">
+            <form action="" method="post">
                 <input type="hidden" name="updateProfil">
                 <button type="submit">Supprimer mon compte</button>
             </form>

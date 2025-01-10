@@ -332,6 +332,6 @@ tr:nth-child(even) {
     padding: 10px;
     border-radius: 5px;
 }
-.validation{
+.validation p{
     color: rgb(55, 185, 70);
 }
