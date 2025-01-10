@@ -38,6 +38,8 @@ class ProfilController
                         $this->validationMessage = 'Profil modifié avec succès';
                     }
                 }
+            } else{
+                $this->validationMessage = 'nahhh';
             }
         }
             
