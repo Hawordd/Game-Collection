@@ -17,37 +17,30 @@ class ProfilController
     public function profilRequest(): void
     {
         if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->validationMessage = 'serveur valid';
-            if(isset($_SESSION['id'])){
-                $this->validationMessage = 'id valide';
-                if (isset($_POST['updateProfil'])) {
-                    $id = $_SESSION['id'];
-                    $nom = $_POST['name'] ?? null;
-                    $prenom = $_POST['surname'] ?? null;
-                    $currentEmail = $this->getEmail();
-                    $email = $_POST['email'] ?? null;
-                    $password = $_POST['password'] ?? null;
-                    $password_verify = $_POST['confirm_password'] ?? null;
-    
-                    if ($this->verifyDoublePasswordUser($password, $password_verify) === false) {
-                        $this->errorMessage = 'Les mots de passe ne correspondent pas';
-                    } else {
-                        if ($currentEmail != $email) {
-                            if ($this->model->emailExists($email)) {
-                                $this->errorMessage = 'Cet email est déjà utilisé';
-                            }
-                        } else {
-                            $this->model->updateUser($id, $nom, $prenom, $email, $password);
-                            $this->validationMessage = 'Profil modifié avec succès';
+            if (isset($_POST['updateProfil'])) {
+                $id = $_SESSION['id'];
+                $nom = $_POST['name'] ?? null;
+                $prenom = $_POST['surname'] ?? null;
+                $currentEmail = $this->getEmail();
+                $email = $_POST['email'] ?? null;
+                $password = $_POST['password'] ?? null;
+                $password_verify = $_POST['confirm_password'] ?? null;
+
+                if ($this->verifyDoublePasswordUser($password, $password_verify) === false) {
+                    $this->errorMessage = 'Les mots de passe ne correspondent pas';
+                } else {
+                    if ($currentEmail != $email) {
+                        if ($this->model->emailExists($email)) {
+                            $this->errorMessage = 'Cet email est déjà utilisé';
                         }
+                    } else {
+                        $this->model->updateUser($id, $nom, $prenom, $email, $password);
+                        $this->validationMessage = 'Profil modifié avec succès';
                     }
                 }
             }
+        }
             
-        }
-        else {
-            $this->errorMessage = 'fuck';
-        }
     }
 
     public function getNom(){
