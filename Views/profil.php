@@ -1,5 +1,5 @@
 <?php
-require 'Controllers/loginController.php';
+require_once 'Controllers/profilController.php';
 $controller = new ProfilController();
 $controller->profilController();
 ?>
