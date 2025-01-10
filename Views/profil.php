@@ -52,6 +52,8 @@ $controller->profilRequest();
         </div>
         <?php if ($controller->errorMessage): ?>
                 <p><?php echo $controller->errorMessage; ?></p>
+        <?php endif; ?>
+        <?php if ($controller->validationMessage): ?>
                 <p><?php echo $controller->validationMessage; ?></p>
         <?php endif; ?>
     </main>
