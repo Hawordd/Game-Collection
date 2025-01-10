@@ -34,8 +34,8 @@
                 </div>
                 <button type="submit">Modifier</button>
                 <button type="submit">Supprimer mon compte</button>
-                <button type="submit">Se déconnecter</button>
             </form>
+                <button type="submit">Se déconnecter</button>
         </div>
     </main>
     <footer>
