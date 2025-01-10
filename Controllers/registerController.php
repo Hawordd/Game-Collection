@@ -32,6 +32,11 @@ class registerController
                     } else {
                         $this->model->addUser($nom, $prenom, $email, $password);
                         $this->validationMessage = 'Votre compte a bien été créé';
+                        $user = $this->model->getUserByEmail($email);
+                        $_SESSION['id'] = $user['id_utili'];
+                        $_SESSION['prenom'] = $user['pren_utili'];
+                        header('Location: /');
+                        exit();
                     }
                 }
             }

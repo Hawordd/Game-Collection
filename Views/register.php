@@ -18,11 +18,15 @@ $controller->registerRequest();
     <div id="log-page">
         <div id="log-form">
             <h1>Inscription</h1>
-            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registerUser']) && $controller->errorMessage): ?>
-                <p class="error-message"><?php echo $controller->errorMessage; ?></p>
+            <?php if ($controller->errorMessage): ?>
+                <div class="error">
+                    <p><?php echo $controller->errorMessage; ?></p>
+                </div>
             <?php endif; ?>
-            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registerUser']) && $controller->validationMessage): ?>
-                <p class="validation-message"><?php echo $controller->validationMessage; ?></p>
+            <?php if ($controller->validationMessage): ?>
+                <div class="validation">
+                    <p><?php echo $controller->validationMessage; ?></p>
+                </div>
             <?php endif; ?>
             <form method="post" action="register" id="registerUser">
                 <input type="hidden" name="registerUser" value="1">

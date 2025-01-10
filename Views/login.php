@@ -19,6 +19,16 @@ $controller->loginRequest();
         <div id="log-page">
             <div id="log-form">
                 <h1>Se connecter à Game Collection</h1>
+                <?php if ($controller->errorMessage): ?>
+                    <div class="error">
+                        <p><?php echo $controller->errorMessage; ?></p>
+                    </div>
+                <?php endif; ?>
+                <?php if ($controller->validationMessage): ?>
+                    <div class="validation">
+                        <p><?php echo $controller->validationMessage; ?></p>
+                    </div>
+                <?php endif; ?>
                 <form method="post" action="login" id="loginUser">
                     <input type="hidden" name="loginUser" value="1">
                     <div class="label">
