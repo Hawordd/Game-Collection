@@ -317,3 +317,17 @@ tr:nth-child(even) {
     max-height: 600px;
     object-fit: cover;
 }
+
+.error{
+    background-color: rgba(185, 55, 55, 0.65);
+    color: rgb(185, 55, 55);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.validation{
+    background-color: rgba(55, 185, 70, 0.65);
+    color: rgb(55, 185, 70);
+    padding: 10px;
+    border-radius: 5px;
+}

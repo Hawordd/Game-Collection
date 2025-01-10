@@ -17,6 +17,16 @@ $controller->profilRequest();
     <main>
         <div id="content">
             <h1>Mon profil</h1>
+            <?php if ($controller->errorMessage): ?>
+                <div class="error">
+                    <p><?php echo $controller->errorMessage; ?></p>
+                </div>
+            <?php endif; ?>
+            <?php if ($controller->validationMessage): ?>
+                <div class="validation">
+                    <p><?php echo $controller->validationMessage; ?></p>
+                </div>
+            <?php endif; ?>
             <form>
                 <div class="label">
                     <label for="name">Nom :</label>
@@ -50,12 +60,6 @@ $controller->profilRequest();
                 <button type="submit">Se déconnecter</button>
             </form>
         </div>
-        <?php if ($controller->errorMessage): ?>
-                <p><?php echo $controller->errorMessage; ?></p>
-        <?php endif; ?>
-        <?php if ($controller->validationMessage): ?>
-                <p><?php echo $controller->validationMessage; ?></p>
-        <?php endif; ?>
     </main>
     <footer>
         <p>Game Collection - 2024 - Tous droits réservés</p>

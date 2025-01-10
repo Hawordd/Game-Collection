@@ -38,7 +38,7 @@ class ProfilController
                             }
                         } else {
                             $this->model->updateUser($id, $nom, $prenom, $email, $password);
-                            $this->validationMessage = 'Utilisateur modifié avec succès';
+                            $this->validationMessage = 'Profil modifié avec succès';
                         }
                     }
                 }
