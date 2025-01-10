@@ -42,6 +42,9 @@ class ProfilController
                 $this->validationMessage = 'nahhh';
             }
         }
+        else{
+            $this->validationMessage = 'fuck';
+        }
             
     }
 
