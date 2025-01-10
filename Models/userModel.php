@@ -54,7 +54,6 @@ class UserModel {
             ));
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
-            $this->errorMessage = 'fuck';
         }
     }
 
