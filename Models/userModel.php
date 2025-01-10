@@ -57,6 +57,17 @@ class UserModel {
         }
     }
 
+    public function removeUser($id): void {
+        try {
+            $req = $this->db->prepare('DELETE FROM UTILISATEUR WHERE id_utili = :id;');
+            $req->execute(array(
+                'id' => $id,
+            ));
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+        }
+    }
+
     public function emailExists($email): bool {
         $stmt = $this->db->prepare("SELECT COUNT(*) FROM UTILISATEUR WHERE email_utili = :email");
         $stmt->bindParam(':email', $email);

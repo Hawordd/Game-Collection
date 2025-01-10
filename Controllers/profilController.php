@@ -42,6 +42,10 @@ class ProfilController
                         }
                     }
                 }
+                if (isset($_POST['deleteProfil'])) {
+                    $id = $_SESSION['id'];
+                    $this->model->deleteUser($id);
+                }
             }
         }
     }

@@ -320,7 +320,7 @@ tr:nth-child(even) {
 
 .error{
     background-color: rgba(185, 55, 55, 0.25);
-    padding: 10px;
+    padding: 0 15px;
     border-radius: 5px;
 }
 .error p{
@@ -329,7 +329,7 @@ tr:nth-child(even) {
 
 .validation{
     background-color: rgba(55, 185, 70, 0.25);
-    padding: 10px;
+    padding: 0 15px;
     border-radius: 5px;
 }
 .validation p{
