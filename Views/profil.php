@@ -50,6 +50,10 @@ $controller->profilRequest();
                 <button type="submit">Se déconnecter</button>
             </form>
         </div>
+        <?php if ($controller->errorMessage): ?>
+                <p><?php echo $controller->errorMessage; ?></p>
+                <p><?php echo $controller->validationMessage; ?></p>
+        <?php endif; ?>
     </main>
     <footer>
         <p>Game Collection - 2024 - Tous droits réservés</p>
