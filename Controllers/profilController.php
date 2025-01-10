@@ -2,7 +2,7 @@
 
 use Models\UserModel;
 
-require_once 'Models/gameModel.php';
+require_once 'Models/userModel.php';
 
 class ProfilController
 {
