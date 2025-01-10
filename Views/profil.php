@@ -15,6 +15,7 @@ $controller->profilRequest();
 <body>
     <?php include 'header.php'; ?>
     <main>
+        <?php var_dump($_SESSION) ?>
         <div id="content">
             <h1>Mon profil</h1>
             <?php if ($controller->errorMessage): ?>
