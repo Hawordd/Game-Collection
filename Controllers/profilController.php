@@ -17,9 +17,7 @@ class ProfilController
     public function profilRequest(): void
     {
         if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->validationMessage = 'serveur valid';
             if(isset($_SESSION['id'])){
-                $this->validationMessage = 'id valide';
                 if (isset($_POST['updateProfil'])) {
                     $id = $_SESSION['id'];
                     $nom = $_POST['name'] ?? null;

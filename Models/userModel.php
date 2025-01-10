@@ -57,7 +57,7 @@ class UserModel {
         }
     }
 
-    public function removeUser($id): void {
+    public function deleteUser($id): void {
         try {
             $req = $this->db->prepare('DELETE FROM UTILISATEUR WHERE id_utili = :id;');
             $req->execute(array(
