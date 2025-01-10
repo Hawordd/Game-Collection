@@ -10,7 +10,7 @@ if(isset($_SESSION['id'])) {
     <div id="games-list">
         <?php if (empty($games)): ?>
             <p>Vous n'avez pas encore ajouté de jeux.</p>
-            <a href="add" class="btn">Ajouter un jeu</a>
+            <button href="library">Ajouter un jeu</button>
         <?php else: ?>
             <?php foreach ($games as $game): ?>
                 <?php
