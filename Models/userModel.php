@@ -44,7 +44,7 @@ class UserModel {
 
     public function updateUser($id, $nom, $prenom, $email, $motdepasse): void {
         try {
-            $req = $this->db->prepare('UPDATE UTILISATEUR SET nom_utili = :nom, pren_utili = :prenom, email_utili = :email, mdp_utili = :motdepasse WHERE id_utilisateur = :id;');
+            $req = $this->db->prepare('UPDATE UTILISATEUR SET nom_utili = :nom, pren_utili = :prenom, email_utili = :email, mdp_utili = :motdepasse WHERE id_utili = :id;');
             $req->execute(array(
                 'id' => $id,
                 'nom' => $nom,
