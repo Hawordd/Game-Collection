@@ -24,7 +24,6 @@ class loginController
                     $user = $this->model->getUserByEmail($email);
                     $_SESSION['id'] = $user['id_utili'];
                     $_SESSION['prenom'] = $user['pren_utili'];
-                    $_SESSION['userId'] = $user['id_utili'];
 
                     $this->errorMessage = 'Connection réussie';
                     header('Location: /');
