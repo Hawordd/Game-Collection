@@ -29,17 +29,14 @@ class ProfilController
     
                     if ($this->verifyDoublePasswordUser($password, $password_verify) === false) {
                         $this->errorMessage = 'Les mots de passe ne correspondent pas';
-                        $_POST['name'] = "password";
                     } else {
                         if ($currentEmail != $email) {
                             if ($this->model->emailExists($email)) {
                                 $this->errorMessage = 'Cet email est déjà utilisé';
-                                $_POST['name'] = "mail";
                             }
                         } else {
                             $this->model->updateUser($id, $nom, $prenom, $email, $password);
                             $this->validationMessage = 'Utilisateur modifié avec succès';
-                            $_POST['name'] = "Dan";
                         }
                     }
                 }
