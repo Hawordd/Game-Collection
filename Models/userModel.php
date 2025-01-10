@@ -63,6 +63,8 @@ class UserModel {
             $req->execute(array(
                 'id' => $id,
             ));
+            header('Location: /disconnect'); 
+            exit;
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
         }
