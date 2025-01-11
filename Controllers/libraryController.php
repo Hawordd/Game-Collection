@@ -15,7 +15,18 @@ class libraryController
 
     public function getAllGamesNotOwnedByUser(): array
     {
-        return $this->model->getAllGamesNotOwnedByUser();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
+            $games = $this->model->searchGame($_POST['search']);
+        } else {
+            $games = $this->model->getAllGamesNotOwnedByUser();
+        }
+
+        if (empty($games)) {
+            header('Location: /add');
+            exit();
+        }
+
+        return $games;
     }
 
     public function getGameInfos($id_jeux)
@@ -26,11 +37,6 @@ class libraryController
     public function getGamePlatforms($id_jeux)
     {
         return $this->model->getGamePlatforms($id_jeux);
-    }
-
-    public function addGameToUserLibrary($gameId): void
-    {
-        $this->model->addGameToUserLibrary($gameId);
     }
 
     public function addGameToUserRequest(): void
