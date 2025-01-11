@@ -87,4 +87,28 @@ class GameModel {
         }
         return $platforms;
     }
+
+    public function getAllGamesNotOwnedByUser(): array
+    {
+        $req = $this->db->prepare('SELECT * FROM JEUX WHERE id_jeux NOT IN (SELECT id_jeux FROM TEMPS WHERE id_utili = :userId)');
+        $req->execute(['userId' => $_SESSION['id']]);
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function addGameToUserLibrary($gameId): void
+    {
+        $req = $this->db->prepare('INSERT INTO TEMPS (id_jeux, id_utili, temps_jeux) VALUES (:gameId, :userId, :temps_jeu)');
+        $req->execute([
+            'gameId' => $gameId,
+            'userId' => $_SESSION['id'],
+            'temps_jeu' => -1
+        ]);
+    }
+
+    public function searchGame($search): array
+    {
+        $req = $this->db->prepare('SELECT * FROM JEUX WHERE nom_jeux LIKE :search');
+        $req->execute(array('search' => '%' . $search . '%'));
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
