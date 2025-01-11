@@ -13,7 +13,6 @@ $controller = new scoreboardController();
 <body>
     <?php include 'header.php'; ?>
     <main>
-        <?php var_dump($controller->getUserScoreboard()) ?>
         <div id="content">
             <h1>Classement des temps passés</h1>
             <table>
@@ -24,7 +23,6 @@ $controller = new scoreboardController();
                 </tr>
                 <?php foreach($controller->getUserScoreboard() as $line): ?>
                     <tr>
-                        <?php var_dump($line) ?>
                         <td><?php echo $line['Joueur'] ?></td>
                         <td><?php echo $line['Temps total passé'] ?></td>
                         <td><?php echo $line['Jeu favori'] ?></td>
