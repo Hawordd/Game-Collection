@@ -24,6 +24,7 @@ $controller = new scoreboardController();
                 </tr>
                 <?php foreach($controller->getUserScoreboard() as $line): ?>
                     <tr>
+                        <?php var_dump($line) ?>
                         <td><?php echo $line['Joueur'] ?></td>
                         <td><?php echo $line['Temps total passé'] ?></td>
                         <td><?php echo $line['Jeu favori'] ?></td>
