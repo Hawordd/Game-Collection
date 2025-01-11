@@ -16,6 +16,12 @@ class UserModel {
         $this->db = Database::getConnection();
     }
 
+    public function getUserScordboard() {
+        $req = $this->db->prepare('SELECT u.nom_utili AS Joueur, SUM(t.temps_jeux) AS "Temps total passé", j.nom_jeux AS "Jeu favori" FROM UTILISATEUR u JOIN TEMPS t ON u.id_utili = t.id_utili JOIN JEUX j ON t.id_jeux = j.id_jeux WHERE t.temps_jeux = (SELECT MAX(t2.temps_jeux) FROM TEMPS t2 WHERE t2.id_utili = t.id_utili) GROUP BY u.id_utili, j.id_jeux ORDER BY u.nom_utili;');
+        $req->execute();
+        return $req->fetch();
+    }
+
     public function getUser($id) {
         $req = $this->db->prepare('SELECT * FROM UTILISATEUR WHERE id_utili = :id');
         $req->execute(array('id' => $id));

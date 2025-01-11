@@ -1,3 +1,7 @@
+<?php
+require 'Controllers/scoreboardController.php';
+$controller = new scoreboardController();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,7 +13,7 @@
 <body>
     <?php include 'header.php'; ?>
     <main>
-        
+        <?php var_dump($controller->getUserScoreboard()) ?>
         <div id="content">
             <h1>Classement des temps passés</h1>
             <table>
