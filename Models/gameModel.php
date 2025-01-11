@@ -104,4 +104,11 @@ class GameModel {
             'temps_jeu' => -1
         ]);
     }
+
+    public function searchGame($search): array
+    {
+        $req = $this->db->prepare('SELECT * FROM JEUX WHERE nom_jeux LIKE :search');
+        $req->execute(array('search' => '%' . $search . '%'));
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
