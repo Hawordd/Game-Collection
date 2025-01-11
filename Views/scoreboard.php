@@ -22,26 +22,13 @@ $controller = new scoreboardController();
                     <th>Temps passés</th>
                     <th>Jeu favori</th>
                 </tr>
-                <tr>
-                    <td>nom</td>
-                    <td>100h</td>
-                    <td>Minecraft</td>
-                </tr>
-                <tr>
-                    <td>nom</td>
-                    <td>100h</td>
-                    <td>Minecraft</td>
-                </tr>
-                <tr>
-                    <td>nom</td>
-                    <td>100h</td>
-                    <td>Minecraft</td>
-                </tr>
-                <tr>
-                    <td>nom</td>
-                    <td>100h</td>
-                    <td>Minecraft</td>
-                </tr>
+                <?php foreach($controller->getUserScoreboard() as $line): ?>
+                    <tr>
+                        <td><?php echo $line['Joueur'] ?></td>
+                        <td><?php echo $line['Temps total passé'] ?></td>
+                        <td><?php echo $line['Jeu favori'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
             </table>
         </div>
     </main>
