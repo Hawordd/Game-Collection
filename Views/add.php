@@ -14,7 +14,6 @@ $controller->addGameRequest();
 </head>
 <body>
     <?php include 'header.php'; ?>
-    <?php var_dump($_POST) ?>
     <main>
         <div id="content">
             <h1>Ajouter un jeu a sa bibliothèque</h1>
@@ -26,7 +25,7 @@ $controller->addGameRequest();
                 <input type="hidden" name="addGame" value="1">
                 <div class="label">
                     <label for="name">Nom du jeu :</label>
-                    <input type="text" name="name" id="name" placeholder="Non du jeu" value="<?php echo isset($_POST['search']) ? $_POST['search'] : 'none'; ?>" required>
+                    <input type="text" name="name" id="name" placeholder="Non du jeu" required>
                 </div>
                 <div class="label">
                     <label for="editor">Éditeur du jeu :</label>
