@@ -221,6 +221,8 @@ form h3{
     align-self: center;
     font-weight: 50;
     font-size: 25px;
+    width: 80px;
+    text-align: left;
 }
 .game h2{
     font-weight: 700;
