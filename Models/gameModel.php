@@ -107,8 +107,11 @@ class GameModel {
 
     public function searchGame($search): array
     {
-        $req = $this->db->prepare('SELECT * FROM JEUX WHERE nom_jeux LIKE :search');
-        $req->execute(array('search' => '%' . $search . '%'));
+        $req = $this->db->prepare('SELECT * FROM JEUX WHERE nom_jeux LIKE :search AND id_jeux NOT IN (SELECT id_jeux FROM TEMPS WHERE id_utili = :userId)');
+        $req->execute([
+            'search' => '%' . $search . '%',
+            'userId' => $_SESSION['id']
+        ]);
         return $req->fetchAll(PDO::FETCH_ASSOC);
     }
 }
