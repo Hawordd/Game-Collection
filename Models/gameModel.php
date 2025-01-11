@@ -114,4 +114,23 @@ class GameModel {
         ]);
         return $req->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function updatePlaytime($game_id, $playtime): void
+    {
+        $req = $this->db->prepare('UPDATE TEMPS SET temps_jeux = :playtime WHERE id_jeux = :game_id AND id_utili = :id');
+        $req->execute([
+            'playtime' => $playtime,
+            'game_id' => $game_id,
+            'id' => $_SESSION['id']
+        ]);
+    }
+
+    public function deleteGameFromUser($game_id): void
+    {
+        $req = $this->db->prepare('DELETE FROM TEMPS WHERE id_jeux = :game_id AND id_utili = :id');
+        $req->execute([
+            'game_id' => $game_id,
+            'id' => $_SESSION['id']
+        ]);
+    }
 }
