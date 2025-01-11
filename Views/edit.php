@@ -31,7 +31,7 @@ $gameId = $gameDetails['id_jeux'];
                 <h1><?php echo htmlspecialchars($gameDetails['nom_jeux']); ?></h1>
                 <p><?php echo htmlspecialchars($gameDetails['desc_jeux']); ?></p>
                 <p>Temps passé sur le jeu : <?php echo htmlspecialchars($playtime)?> h</p>
-                <form method="post" action="" id="updatePlaytime">
+                <form method="post" id="updatePlaytime">
                     <h1>Ajouter le temps passés sur le jeu</h1>
                     <div class="label">
                         <label for="time">Temps passés sur le jeu :</label>
@@ -40,7 +40,7 @@ $gameId = $gameDetails['id_jeux'];
                     </div>
                     <button type="submit" name="updatePlaytime">Ajouter</button>
                 </form>
-                <form method="post" action="" id="deleteGameFromUser">
+                <form method="post" id="deleteGameFromUser">
                     <input type="hidden" name="game_id" value="<?php echo $gameId; ?>">
                     <button type="submit" name="deleteGameFromUser">Supprimer le jeu de ma bibliothèque</button>
                 </form>
