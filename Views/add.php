@@ -25,7 +25,7 @@ $controller->addGameRequest();
                 <input type="hidden" name="addGame" value="1">
                 <div class="label">
                     <label for="name">Nom du jeu :</label>
-                    <input type="text" name="name" id="name" placeholder="Non du jeu" value="<?php echo if (isset($_POST['search']))? $_POST['search'] : '' ?>" required>
+                    <input type="text" name="name" id="name" placeholder="Non du jeu" value="<?php echo isset($_POST['search']) ? $_POST['search'] : ''; ?>" required>
                 </div>
                 <div class="label">
                     <label for="editor">Éditeur du jeu :</label>
