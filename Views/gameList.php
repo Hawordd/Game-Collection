@@ -21,16 +21,18 @@ if(isset($_SESSION['id'])) {
                 $platforms = $controller->getGamePlatforms($game);
                 ?>
                 <article class="game">
-                    <img src="<?php echo $gameInfos['url_couverture_jeux'] ?>" alt="jeu">
-                    <div>
+                    <a href="/edit/<?php echo $gameInfos['id_jeux']; ?>">
+                        <img src="<?php echo $gameInfos['url_couverture_jeux'] ?>" alt="jeu">
                         <div>
-                            <h2><?php echo $gameInfos['nom_jeux'] ?></h2>
-                            <?php if($playtime !== -1): ?>
-                                <h3><?php echo $playtime . 'H' ?></h3>
+                            <div>
+                                <h2><?php echo $gameInfos['nom_jeux'] ?></h2>
+                                <?php if($playtime !== -1): ?>
+                                    <h3><?php echo $playtime . 'H' ?></h3>
                                 <?php endif; ?>
+                            </div>
+                            <p><?php echo implode(' ', $platforms); ?></p>
                         </div>
-                        <p><?php echo implode(' ', $platforms); ?></p>
-                    </div>
+                    </a>
                 </article>
             <?php endforeach; ?>
         <?php endif; ?>
