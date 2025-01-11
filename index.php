@@ -27,6 +27,9 @@ $routes = [
 
 if (array_key_exists($request, $routes)) {
     include $routes[$request];
+} elseif (isset($_GET['game_id'])) {
+    $game_id = $_GET['game_id'];
+    include 'Views/edit.php';
 } else {
     http_response_code(404);
     header('Location: /404');
