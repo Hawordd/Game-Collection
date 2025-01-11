@@ -14,6 +14,7 @@ $controller->addGameRequest();
 </head>
 <body>
     <?php include 'header.php'; ?>
+    <?php var_dump($_POST) ?>
     <main>
         <div id="content">
             <h1>Ajouter un jeu a sa bibliothèque</h1>
