@@ -44,7 +44,7 @@ class libraryController
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['game_id'])) {
             $this->model->addGameToUserLibrary($_POST['game_id']);
 
-            header('Location: /');
+            header('Location: /edit/' . $_POST['game_id']);
             exit();
         }
     }

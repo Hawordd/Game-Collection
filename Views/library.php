@@ -38,7 +38,6 @@ $controller->addGameToUserRequest();
                     <div>
                         <div>
                             <h2><?php echo $gameInfos['nom_jeux'] ?></h2>
-                            <h3><?php echo $gameInfos['date_sortie_jeux'] ?></h3>
                         </div>
                         <p><?php echo implode(' ', $platforms); ?></p>
                         <form method="post" action="library">

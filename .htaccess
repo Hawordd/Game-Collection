@@ -1,6 +1,9 @@
 RewriteEngine On
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
-RewriteRule ^(.*)$ index.php [QSA,L]
+RewriteRule ^edit/([0-9]+)$ index.php?game_id=$1 [QSA,L]
+
+RewriteRule ^.*$ index.php [QSA,L]
