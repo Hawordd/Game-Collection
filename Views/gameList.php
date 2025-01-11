@@ -27,7 +27,7 @@ if(isset($_SESSION['id'])) {
                             <h2><?php echo $gameInfos['nom_jeux'] ?></h2>
                             <h3><?php
                                 if($playtime !== -1) {
-                                    echo $playtime . ' H';
+                                    echo $playtime . 'H';
                                 } else {
                                     echo '';
                                 }
