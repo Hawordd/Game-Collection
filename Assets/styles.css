@@ -175,9 +175,9 @@ form h3{
 #games-list{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
-    gap: 10px;
+    gap: calc((100%-900px)/2);
     flex-wrap: wrap;
 }
 .game{
