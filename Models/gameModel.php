@@ -66,12 +66,12 @@ class GameModel {
         return $games;
     }
 
-    public function getPlaytime($game, $id)
+    public function getPlaytime($game)
     {
         $req = $this->db->prepare('SELECT temps_jeux FROM TEMPS WHERE id_jeux = :game AND id_utili = :id');
         $req->execute(array(
             'game' => $game,
-            'id' => $id
+            'id' => $_SESSION['id']
         ));
         return $req->fetch()['temps_jeux'];
     }

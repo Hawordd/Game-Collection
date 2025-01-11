@@ -22,9 +22,9 @@ class gameListController
         return $game ? $game : [];
     }
 
-    public function getPlaytime($game, $id)
+    public function getPlaytime($game)
     {
-        return $this->model->getPlaytime($game, $id);
+        return $this->model->getPlaytime($game);
     }
 
     public function getGamePlatforms($game): array

@@ -17,7 +17,7 @@ if(isset($_SESSION['id'])) {
             <?php foreach ($games as $game): ?>
                 <?php
                 $gameInfos = $controller->getGameInfos($game);
-                $playtime = $controller->getPlaytime($game, $_SESSION['id']);
+                $playtime = $controller->getPlaytime($game);
                 $platforms = $controller->getGamePlatforms($game);
                 ?>
                 <article class="game">
