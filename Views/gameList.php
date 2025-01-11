@@ -25,14 +25,9 @@ if(isset($_SESSION['id'])) {
                     <div>
                         <div>
                             <h2><?php echo $gameInfos['nom_jeux'] ?></h2>
-                            <h3><?php
-                                if($playtime !== -1) {
-                                    echo $playtime . ' H';
-                                } else {
-                                    echo '';
-                                }
-
-                                ?></h3>
+                            <?php if($playtime !== -1): ?>
+                                <h3><?php echo $playtime . 'H' ?></h3>
+                                <?php endif; ?>
                         </div>
                         <p><?php echo implode(' ', $platforms); ?></p>
                     </div>
