@@ -33,7 +33,7 @@ class addGameController
 
                 if ($nom && $editeur && $date_sortie && $url_img && $url_jeu && $desc_jeu) {
                     $this->model->addGame($nom, $editeur, $date_sortie, $url_img, $url_jeu, $desc_jeu, $platforms);
-                    header('Location: /library');
+                    header('Location: /edit/' . $this->model->getGameName($nom)['id_jeux']);
                     exit();
                 } else {
                     $this->errorMessage = 'Tous les champs sont requis.';
