@@ -315,8 +315,11 @@ tr:nth-child(even) {
     flex-direction: column;
     gap: 10px;
 }
+#content-row{
+    gap: 20px;
+}
 #content-row img{
-    width: 350px;
+    width: 400px;
     max-height: 600px;
     object-fit: cover;
 }
