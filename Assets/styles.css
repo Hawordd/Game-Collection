@@ -177,7 +177,7 @@ form h3{
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    gap: calc((100%-900px)/2);
+    gap: calc((100% - 900px) / 2);
     flex-wrap: wrap;
 }
 .game{
