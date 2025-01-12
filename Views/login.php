@@ -14,7 +14,6 @@ $controller->loginRequest();
     <title>Game Collection - Login</title>
 </head>
 <body>
-    <?php include 'header.php'; ?>
     <main>
         <div id="log-page">
             <div id="log-form">
@@ -22,11 +21,6 @@ $controller->loginRequest();
                 <?php if ($controller->errorMessage): ?>
                     <div class="error">
                         <p><?php echo $controller->errorMessage; ?></p>
-                    </div>
-                <?php endif; ?>
-                <?php if ($controller->validationMessage): ?>
-                    <div class="validation">
-                        <p><?php echo $controller->validationMessage; ?></p>
                     </div>
                 <?php endif; ?>
                 <form method="post" action="login" id="loginUser">
