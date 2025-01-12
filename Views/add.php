@@ -68,9 +68,7 @@ $controller->addGameRequest();
             </form>
         </div>
     </main>
-    <footer>
-        <p>Game Collection - 2024 - Tous droits réservés</p>
-    </footer>
+    <?php include 'footer.php'; ?>
 </body>
 </html>
  

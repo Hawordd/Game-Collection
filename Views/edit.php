@@ -48,8 +48,6 @@ $gameId = $gameDetails['id_jeux'];
             <img src="<?php echo $gameDetails['url_couverture_jeux'] ?>" alt="img game">
         </div>
     </main>
-    <footer>
-        <p>Game Collection - 2024 - Tous droits réservés</p>
-    </footer>
+    <?php include 'footer.php'; ?>
 </body>
 </html>
