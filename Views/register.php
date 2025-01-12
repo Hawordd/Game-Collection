@@ -43,7 +43,7 @@ $controller->registerRequest();
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="label">
-                    <label for="password">Mot de passe :</label>
+                    <label for="password">Mot de passe (au moins 8 caractères):</label>
                     <input type="password" name="password" id="password" required>
                 </div>
                 <div class="label">
